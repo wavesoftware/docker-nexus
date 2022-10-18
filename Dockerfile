@@ -1,6 +1,6 @@
-ARG VERSION=3.37.3
+ARG VERSION=3.42.0
 ARG PUPPET_VERSION=0.1.6
-FROM registry.access.redhat.com/ubi8:8.5 as downloader
+FROM registry.access.redhat.com/ubi8/ubi-minimal as downloader
 ARG PUPPET_VERSION
 WORKDIR /
 RUN curl -L https://repo1.maven.org/maven2/org/sonatype/nexus/plugins/nexus-repository-puppet/${PUPPET_VERSION}/nexus-repository-puppet-${PUPPET_VERSION}.jar \
