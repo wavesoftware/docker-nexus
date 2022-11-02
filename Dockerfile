@@ -13,6 +13,7 @@ RUN gpg2 --keyserver keyserver.ubuntu.com \
 RUN gpg2 --trusted-key 8C79C4D0382A0E3A \
   --verify nexus-repository-puppet.jar.asc \
   nexus-repository-puppet.jar
+ARG VERSION
 FROM docker.io/sonatype/nexus3:$VERSION
 COPY --from=downloader \
   /nexus-repository-puppet.jar \
